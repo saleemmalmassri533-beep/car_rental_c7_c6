@@ -113,7 +113,7 @@
 function addCar() {
     var name = document.getElementById("newCarName").value.trim();
     var price = Number(document.getElementById("newCarPrice").value);
-    var cars = JSON.parse(localStorage.getItem("extraCars") || "[]");
+    var cars = JSON.parse(localStorage.getItem("extraCars")  "[]");
 
       if (name === "" || price <= 0 || !Number.isFinite(price)) {
         document.getElementById("adminMessage").textContent =
