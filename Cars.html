@@ -80,5 +80,71 @@
   </div>
   <div id="footer">© 2026 طريقك لتأجير السيارات — مشروع تعليمي</div>
 </div>
+  <section id="adminSection">
+    <h2>Administrative Functions</h2>
+    <p>Add a new car or remove a car from the list.</p>
+
+    <fieldset>
+        <legend>Add a Car</legend>
+
+        <label for="newCarName">Car Name:</label>
+        <input type="text" id="newCarName" />
+
+        <label for="newCarPrice">Daily Rental Price:</label>
+        <input type="number" id="newCarPrice" min="1" />
+
+        <button type="button" onclick="addCar()">Add Car</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Remove a Car</legend>
+
+        <label for="removeCarName">Car Name:</label>
+        <input type="text" id="removeCarName" />
+
+        <button type="button" onclick="removeCar()">Remove Car</button>
+    </fieldset>
+
+    <p id="adminMessage"></p>
+</section>
+
+<script type="text/javascript">
+//<![CDATA[
+function addCar() {
+    var name = document.getElementById("newCarName").value.trim();
+    var price = Number(document.getElementById("newCarPrice").value);
+    var cars = JSON.parse(localStorage.getItem("extraCars") || "[]");
+
+    if (name === ""  price <= 0  !Number.isFinite(price)) {
+        document.getElementById("adminMessage").textContent =
+            "Please enter a car name and a valid daily price.";
+        return;
+    }
+
+    cars.push({ name: name, price: price });
+    localStorage.setItem("extraCars", JSON.stringify(cars));
+
+    document.getElementById("adminMessage").textContent =
+        "Car added successfully. Refresh the page to see the saved list.";
+}
+
+function removeCar() {
+    var name = document.getElementById("removeCarName").value.trim();
+    var cars = JSON.parse(localStorage.getItem("extraCars") || "[]");
+    var oldLength = cars.length;
+
+    cars = cars.filter(function(car) {
+        return car.name.toLowerCase() !== name.toLowerCase();
+    });
+
+    localStorage.setItem("extraCars", JSON.stringify(cars));
+
+    document.getElementById("adminMessage").textContent =
+        oldLength === cars.length
+        ? "No matching added car was found."
+        : "Added car removed successfully.";
+}
+//]]>
+</script>
 </body>
 </html>
