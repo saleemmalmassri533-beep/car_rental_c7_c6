@@ -1,0 +1,57 @@
+@charset "UTF-8";
+:root { --black:#101114; --dark:#191b20; --panel:#22252b; --red:#e21b2d; --red2:#ff3347; --silver:#c6c9cf; --muted:#969ba5; --line:#3a3d45; --white:#f7f7f8; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; padding:0; background:radial-gradient(circle at 15% 0%,#292c33 0,#141519 38%,#0b0c0e 100%); color:var(--white); font-family:Tahoma,Arial,sans-serif; font-size:15px; line-height:1.85; }
+#page { width:92%; max-width:1160px; margin:24px auto; background:#15161a; box-shadow:0 18px 55px rgba(0,0,0,.48); border:1px solid #34363d; border-radius:14px; overflow:hidden; }
+#header { position:relative; overflow:hidden; background:linear-gradient(115deg,#090a0c 0%,#202229 58%,#3a1017 100%); color:#fff; padding:28px 34px 30px; border-bottom:4px solid var(--red); }
+#header:after { content:"DRIVE  /  RENTAL"; position:absolute; left:25px; bottom:4px; color:rgba(255,255,255,.09); font-size:clamp(24px,4vw,48px); font-weight:900; letter-spacing:4px; direction:ltr; pointer-events:none; }
+#header h1 { position:relative; z-index:1; margin:0; font-size:clamp(26px,3vw,36px); font-weight:900; letter-spacing:.2px; }
+#header h1:before { content:""; display:inline-block; width:8px; height:28px; background:var(--red); margin-left:11px; vertical-align:-3px; transform:skew(-18deg); }
+#header h1 span { color:var(--red2); }
+#header p { position:relative; z-index:1; margin:5px 0 0; color:#c9cbd0; }
+#nav { display:flex; flex-wrap:wrap; gap:8px; background:#0d0e11; padding:12px 20px; border-bottom:1px solid #303239; }
+#nav a { display:inline-block; color:#e8e9ec; text-decoration:none; padding:8px 17px; border-radius:5px; margin:0; border:1px solid transparent; transition:background .2s,color .2s,transform .2s; }
+#nav a:hover,#nav a.active { background:var(--red); color:#fff; border-color:#ff5967; transform:translateY(-1px); }
+.hero { position:relative; overflow:hidden; display:flex; align-items:center; gap:22px; text-align:right; padding:clamp(28px,4vw,48px) clamp(22px,5vw,55px); background:linear-gradient(105deg,rgba(10,11,14,.98) 0%,rgba(18,19,23,.94) 48%,rgba(112,14,27,.72) 100%),repeating-linear-gradient(135deg,transparent 0,transparent 28px,rgba(255,255,255,.035) 29px,rgba(255,255,255,.035) 31px); border-bottom:1px solid #3b2227; }
+.hero:after { content:"GT"; position:absolute; left:4%; top:50%; transform:translateY(-55%) skew(-10deg); font-size:clamp(100px,20vw,230px); font-weight:900; line-height:1; color:rgba(255,255,255,.045); direction:ltr; pointer-events:none; }
+.hero-copy { position:relative; z-index:2; flex:1 1 48%; }
+.hero-visual { flex:1 1 52%; min-width:0; position:relative; z-index:1; }
+.hero-visual img { display:block; width:100%; height:auto; filter:drop-shadow(0 18px 22px rgba(0,0,0,.45)); }
+.hero h2 { position:relative; z-index:1; font-size:clamp(27px,4vw,42px); color:#fff; margin:0 0 8px; border:0; padding:0; }
+.hero h2:after { content:""; display:block; width:84px; height:4px; background:var(--red); margin-top:12px; transform:skew(-25deg); }
+.hero p { position:relative; z-index:1; max-width:650px; color:#d2d4d9; margin:12px 0 22px; }
+.content { padding:clamp(18px,3.5vw,36px); }
+h2 { color:#fff; border-right:4px solid var(--red); padding-right:12px; margin-top:18px; }
+.content > h2:first-child { margin-top:0; }
+p { color:#d6d7db; }
+a { color:#ff5362; }
+a:hover { color:#fff; }
+table { width:100%; border-collapse:collapse; margin:20px 0; overflow:hidden; border-radius:8px; }
+th { background:linear-gradient(100deg,#a90f20,#e21b2d); color:#fff; font-weight:bold; }
+td,th { border:1px solid var(--line); padding:10px; text-align:center; }
+tbody tr { background:#1c1e23; }
+tbody tr:nth-child(even) { background:#24262c; }
+tbody tr:hover { background:#302126; }
+.button,button,input[type=submit] { display:inline-block; background:linear-gradient(110deg,#c81024,#f0273b); color:#fff; border:1px solid #ff5664; border-radius:5px; padding:10px 20px; text-decoration:none; cursor:pointer; font-family:inherit; font-size:15px; font-weight:bold; box-shadow:0 5px 16px rgba(226,27,45,.18); transition:transform .2s,box-shadow .2s,filter .2s; }
+.button:hover,button:hover,input[type=submit]:hover { filter:brightness(1.12); transform:translateY(-2px); box-shadow:0 8px 20px rgba(226,27,45,.28); }
+.center { text-align:center; }
+.notice { background:#251a1d; border:1px solid #74303a; border-right:4px solid var(--red); border-radius:7px; padding:15px; margin:18px 0; }
+textarea { display:block; width:95%; margin:8px 0; padding:10px; color:#fff; background:#17181c; border:1px solid #454851; border-radius:5px; font-family:inherit; }
+.cards { display:flex; gap:15px; flex-wrap:wrap; margin:18px 0; }
+.card { flex:1 1 200px; padding:18px; background:linear-gradient(145deg,#25272d,#191a1e); border:1px solid #393c44; border-top:3px solid var(--red); border-radius:8px; box-shadow:0 8px 18px rgba(0,0,0,.14); }
+.card h3 { color:#ff5362; margin-top:0; }
+fieldset { border:1px solid #494c55; border-radius:8px; padding:18px; background:#1b1c21; }
+legend { color:#ff5362; font-weight:bold; padding:0 8px; }
+form p { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+form p label { min-width:210px; font-weight:bold; color:#e3e4e7; }
+input[type=text],input[type=date] { color:#f7f7f8; background:#111216; border:1px solid #484b54; border-radius:5px; padding:10px; font-family:inherit; min-width:220px; }
+input[type=text]:focus,input[type=date]:focus,textarea:focus { outline:2px solid rgba(226,27,45,.35); border-color:var(--red); }
+input[readonly=readonly] { background:#292b31; color:#ffb3ba; }
+.details { background:#272126; border-right:3px solid var(--red); padding:10px; text-align:right; color:#e4e4e7; }
+.detailsRow { display:none; }
+.small { font-size:13px; color:#b5b8c0; }
+.error { color:#ff7b86; font-weight:bold; }
+.success { color:#85e0b1; font-weight:bold; }
+#footer { background:#090a0c; color:#bfc1c7; text-align:center; padding:16px; border-top:3px solid var(--red); }
+@media (max-width:700px) { .hero{display:block;} .hero-visual{margin-top:18px;} .hero-copy{position:relative;} #page{width:100%;margin:0;border-radius:0;border-left:0;border-right:0;} #header{padding:22px;} #header h1{font-size:24px;} #nav{padding:10px;} #nav a{padding:7px 10px;} .content{padding:16px;} table{font-size:12px;display:block;overflow-x:auto;white-space:nowrap;} td,th{padding:7px;} form p{display:block;} form p label{display:block;margin-bottom:5px;} input[type=text],input[type=date]{width:100%;min-width:0;} .hero:after{left:-3%;} }
